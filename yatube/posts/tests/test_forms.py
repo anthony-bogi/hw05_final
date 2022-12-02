@@ -123,7 +123,7 @@ class PostsFormsTest(TestCase):
             author=self.user)
         form_data = {
             'text': 'Тестовый коментарий поста'
-            }
+        }
         response = self.authorized_client.post(
             reverse(
                 'posts:add_comment',
@@ -138,7 +138,6 @@ class PostsFormsTest(TestCase):
         self.assertRedirects(
             response, reverse('posts:post_detail', args={post.id}))
 
-
     def test_nonauthorized_user_create_comment(self):
         """Создание комментария в базе неавторизированным пользователем."""
         comments_count = Comment.objects.count()
@@ -147,7 +146,7 @@ class PostsFormsTest(TestCase):
             author=self.user)
         form_data = {
             'text': 'Тестовый коментарий'
-            }
+        }
         response = self.guest_user.post(
             reverse(
                 'posts:add_comment',

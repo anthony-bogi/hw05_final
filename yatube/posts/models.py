@@ -51,6 +51,7 @@ class Post(models.Model):
     def __str__(self) -> str:
         return self.text[:POST_FIRST_CHARACTERS]
 
+
 class Comment(models.Model):
     post = models.ForeignKey(
         Post,
@@ -88,6 +89,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text[:POST_FIRST_CHARACTERS]
+
 
 class Follow(models.Model):
     user = models.ForeignKey(

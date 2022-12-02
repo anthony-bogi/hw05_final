@@ -170,7 +170,7 @@ class PostsPaginatorViewsTests(TestCase):
                 text=f'Тестовый текст поста {count}',
                 author=cls.user,
             )
-    
+
     def setUp(self):
         cache.clear()
 
