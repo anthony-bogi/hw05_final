@@ -1,11 +1,10 @@
-from django.contrib.auth import get_user_model
-from django.test import Client, TestCase
-from django.core.files.uploadedfile import SimpleUploadedFile
-from django.urls import reverse
 from django import forms
+from django.contrib.auth import get_user_model
 from django.core.cache import cache
-
-from posts.models import Group, Post, Follow
+from django.core.files.uploadedfile import SimpleUploadedFile
+from django.test import Client, TestCase
+from django.urls import reverse
+from posts.models import Follow, Group, Post
 
 User = get_user_model()
 

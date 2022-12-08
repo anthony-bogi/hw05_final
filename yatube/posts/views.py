@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Post, Group, Follow, User
-from .forms import PostForm, CommentForm
-from .utils import paginator_def
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.cache import cache_page
+
+from .forms import CommentForm, PostForm
+from .models import Follow, Group, Post, User
+from .utils import paginator_def
 
 
 @cache_page(20)
@@ -28,7 +29,7 @@ def group_posts(request, slug):
 
 def profile(request, username):
     author = User.objects.get(username=username)
-    posts = Post.objects.filter(author=author).all()
+    posts = author.posts.all()
     page_obj = paginator_def(request, posts)
     following = request.user.is_authenticated
     if following:

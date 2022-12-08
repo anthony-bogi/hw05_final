@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator
+
 from .constants import POSTS_PER_PAGE
 
 

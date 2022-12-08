@@ -1,7 +1,8 @@
-from django.views.generic import CreateView
-from django.urls import reverse_lazy
 from django.shortcuts import render
-from .forms import CreationForm, ContactForm
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+
+from .forms import ContactForm, CreationForm
 from .models import Contact
 
 
