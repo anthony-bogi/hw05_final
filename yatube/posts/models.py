@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from .constants import POST_FIRST_CHARACTERS
 
-POST_FIRST_CHARACTERS: int = 15
 User = get_user_model()
 
 

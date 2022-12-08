@@ -1,6 +1,5 @@
 from django.core.paginator import Paginator
-
-POSTS_PER_PAGE: int = 10
+from .constants import POSTS_PER_PAGE
 
 
 def paginator_def(request, post_obj):
