@@ -34,3 +34,11 @@ if settings.DEBUG:
     urlpatterns += static(
         settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
     )
+
+if settings.DEBUG:
+    import debug_toolbar
+    import mimetypes
+
+    mimetypes.add_type("application/javascript", ".js", True)
+    
+    urlpatterns += (path('__debug__/', include(debug_toolbar.urls)),)
