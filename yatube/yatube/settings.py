@@ -15,6 +15,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '[::1]',
     'testserver',
+    'www.MrNinja.pythonanywhere.com',
+    'MrNinja.pythonanywhere.com',
 ]
 
 INSTALLED_APPS = [
